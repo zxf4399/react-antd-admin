@@ -6,8 +6,9 @@ import { useMemoizedFn } from "ahooks";
 import "./App.css";
 
 const { Content, Sider } = Layout;
-const Home = lazy(() => import("./views/Home"));
 const About = lazy(() => import("./views/About"));
+const Home = lazy(() => import("./views/Home"));
+const MemoryLeak = lazy(() => import("./views/MemoryLeak"));
 
 function App() {
   const location = useLocation();
@@ -41,6 +42,7 @@ function App() {
         >
           <Menu.Item key="/">Home</Menu.Item>
           <Menu.Item key="/about">About</Menu.Item>
+          <Menu.Item key="/memory-leak">内存泄露</Menu.Item>
         </Menu>
       </Sider>
       <Layout>
@@ -49,6 +51,7 @@ function App() {
             <Routes>
               <Route element={<Home />} path="/" />
               <Route element={<About />} path="/about" />
+              <Route element={<MemoryLeak />} path="/memory-leak" />
             </Routes>
           </Suspense>
         </Content>
