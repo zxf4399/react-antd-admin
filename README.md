@@ -2,5 +2,5 @@
 
 ## RoadMap
 
-- [] prettier
+- [x] prettier
 - [] react-router
