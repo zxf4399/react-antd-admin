@@ -4,3 +4,5 @@
 
 - [x] prettier
 - [x] react-router
+- [] Debugging in the Editor
+- [] redux
