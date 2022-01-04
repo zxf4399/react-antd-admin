@@ -4,6 +4,7 @@ specifiers:
   '@ant-design/icons': ^4.7.0
   '@craco/craco': ^6.4.3
   '@emotion/babel-plugin': ^11.7.2
+  '@emotion/eslint-plugin': ^11.7.0
   '@emotion/react': ^11.7.1
   '@testing-library/jest-dom': ^5.16.1
   '@testing-library/react': ^12.1.2
@@ -38,6 +39,7 @@ dependencies:
 devDependencies:
   '@craco/craco': registry.npmmirror.com/@craco/craco/6.4.3_9b9d69363cba6819d9341a15c2fde5fd
   '@emotion/babel-plugin': registry.npmmirror.com/@emotion/babel-plugin/11.7.2
+  '@emotion/eslint-plugin': registry.npmmirror.com/@emotion/eslint-plugin/11.7.0
   '@testing-library/jest-dom': registry.npmmirror.com/@testing-library/jest-dom/5.16.1
   '@testing-library/react': registry.npmmirror.com/@testing-library/react/12.1.2_react-dom@17.0.2+react@17.0.2
   '@testing-library/user-event': registry.npmmirror.com/@testing-library/user-event/13.5.0
@@ -7623,6 +7625,15 @@ packages:
       '@emotion/weak-memoize': registry.npmmirror.com/@emotion/weak-memoize/0.2.5
       stylis: registry.npmmirror.com/stylis/4.0.13
     dev: false
+
+  registry.npmmirror.com/@emotion/eslint-plugin/11.7.0:
+    resolution: {integrity: sha512-k6H0OxBgkPDVG5M16AWnu3z15OmmKNvGmJiYTcamoOIDhiGE5+no+BiVAiHPOwJf/NOsDei2S9i015cMwlO5sA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@emotion/eslint-plugin/download/@emotion/eslint-plugin-11.7.0.tgz}
+    name: '@emotion/eslint-plugin'
+    version: 11.7.0
+    engines: {node: '>=6'}
+    peerDependencies:
+      eslint: 6 || 7 || 8
+    dev: true
 
   registry.npmmirror.com/@emotion/hash/0.8.0:
     resolution: {integrity: sha1-u7/2iXj+/b5ozLUzvIy+HRr7VBM=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@emotion/hash/download/@emotion/hash-0.8.0.tgz}
