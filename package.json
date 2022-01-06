@@ -49,8 +49,10 @@
     "react-router-dom": "^6.2.1"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.16.7",
     "@craco/craco": "^6.4.3",
     "@emotion/babel-plugin": "^11.7.2",
+    "@emotion/eslint-plugin": "^11.7.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",

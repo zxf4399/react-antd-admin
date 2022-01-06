@@ -8,4 +8,7 @@ module.exports = {
     ],
     plugins: ["@emotion"],
   },
+  eslint: {
+    plugins: ["@emotion"],
+  },
 };
