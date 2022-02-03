@@ -1,7 +1,9 @@
+import PageCounter from "@/pages/counter";
+
 const App = () => {
   return (
     <div>
-      <p>123</p>
+      <PageCounter />
       <h1>Hello, World! 123</h1>
     </div>
   );

@@ -3,6 +3,7 @@ import path from "path";
 import webpack from "webpack";
 import "webpack-dev-server";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
 
 const isDev = process.env.NODE_ENV !== "production";
 
@@ -12,7 +13,7 @@ const config: webpack.Configuration = {
   module: {
     rules: [
       {
-        test: /\.tsx$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -20,6 +21,7 @@ const config: webpack.Configuration = {
       },
     ],
   },
+  devtool: false,
   devServer: {
     hot: true,
   },
@@ -27,13 +29,15 @@ const config: webpack.Configuration = {
     path: path.join(__dirname, "dist"),
   },
   resolve: {
-    extensions: [".tsx", ".js"],
+    extensions: [".ts", ".tsx", ".js"],
+    plugins: [new TsconfigPathsPlugin()],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
     }),
     isDev && new ReactRefreshWebpackPlugin(),
+    new webpack.EvalSourceMapDevToolPlugin({}),
   ].filter(Boolean) as webpack.Configuration["plugins"],
 };
 
