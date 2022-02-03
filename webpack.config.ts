@@ -4,6 +4,7 @@ import webpack from "webpack";
 import "webpack-dev-server";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 const isDev = process.env.NODE_ENV !== "production";
 
@@ -38,6 +39,7 @@ const config: webpack.Configuration = {
     }),
     isDev && new ReactRefreshWebpackPlugin(),
     new webpack.EvalSourceMapDevToolPlugin({}),
+    !isDev && new BundleAnalyzerPlugin(),
   ].filter(Boolean) as webpack.Configuration["plugins"],
 };
 
