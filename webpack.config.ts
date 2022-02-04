@@ -20,27 +20,59 @@ const config: webpack.Configuration = {
           loader: "babel-loader",
         },
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
-  devtool: false,
+  devtool: isDev ? "eval-source-map" : "source-map",
   devServer: {
     hot: true,
   },
   output: {
+    clean: true,
     path: path.join(__dirname, "dist"),
+    filename: "[name].[contenthash].js",
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
     plugins: [new TsconfigPathsPlugin()],
+  },
+  optimization: {
+    runtimeChunk: "single",
+    splitChunks: {
+      chunks: "all",
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          enforce: true,
+          name(module: { context: { match: (arg0: RegExp) => any[] } }) {
+            const packageName = module.context.match(
+              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+            )[1];
+
+            return `npm/${packageName}`;
+          },
+        },
+      },
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
     }),
     isDev && new ReactRefreshWebpackPlugin(),
-    new webpack.EvalSourceMapDevToolPlugin({}),
-    !isDev && new BundleAnalyzerPlugin(),
+    !isDev &&
+      new BundleAnalyzerPlugin({
+        analyzerMode: "disabled",
+        generateStatsFile: true,
+      }),
   ].filter(Boolean) as webpack.Configuration["plugins"],
+  performance: {
+    maxAssetSize: 800000,
+    maxEntrypointSize: 1200000,
+  },
 };
 
 export default config;

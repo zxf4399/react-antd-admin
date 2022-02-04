@@ -14,6 +14,15 @@ module.exports = function (api) {
       ],
       "@babel/preset-typescript",
     ],
-    plugins: [isDev && "react-refresh/babel"].filter(Boolean),
+    plugins: [
+      isDev && "react-refresh/babel",
+      [
+        "import",
+        {
+          libraryName: "antd",
+          style: "css",
+        },
+      ],
+    ].filter(Boolean),
   };
 };

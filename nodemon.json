@@ -1,4 +1,4 @@
 {
-  "watch": ["webpack.config.ts"],
+  "watch": ["webpack.config.ts", ".babelrc"],
   "exec": "cross-env NODE_ENV=development webpack serve"
 }
