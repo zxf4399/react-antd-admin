@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from "@/hooks";
-import { Button, Row, Typography } from "antd";
-import { decrement, increment } from "./slice";
+import { Button, Typography } from "antd";
+import counterSlice from "./slice";
 
 const { Paragraph } = Typography;
 
@@ -10,15 +10,17 @@ export default function Counter() {
 
   return (
     <>
-      <Paragraph>{count}</Paragraph>
+      <Paragraph>Count: {count}</Paragraph>
       <Button
-        onClick={() => dispatch(increment())}
+        onClick={() => dispatch(counterSlice.actions.increment())}
         size="small"
-        style={{ marginRight: 10 }}
       >
         +
       </Button>
-      <Button onClick={() => dispatch(decrement())} size="small">
+      <Button
+        onClick={() => dispatch(counterSlice.actions.decrement())}
+        size="small"
+      >
         -
       </Button>
     </>
