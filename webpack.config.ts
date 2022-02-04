@@ -28,6 +28,7 @@ const config: webpack.Configuration = {
   },
   devtool: isDev ? "eval-source-map" : "source-map",
   devServer: {
+    historyApiFallback: true,
     hot: true,
   },
   output: {
