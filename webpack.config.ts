@@ -5,6 +5,7 @@ import "webpack-dev-server";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
+import ESLintPlugin from "eslint-webpack-plugin";
 
 const isDev = process.env.NODE_ENV !== "production";
 
@@ -48,7 +49,7 @@ const config: webpack.Configuration = {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           enforce: true,
-          name(module: { context: { match: (arg0: RegExp) => any[] } }) {
+          name(module: { context: { match: (arg0: RegExp) => string[] } }) {
             const packageName = module.context.match(
               /[\\/]node_modules[\\/](.*?)([\\/]|$)/
             )[1];
@@ -69,6 +70,9 @@ const config: webpack.Configuration = {
         analyzerMode: "disabled",
         generateStatsFile: true,
       }),
+    new ESLintPlugin({
+      extensions: ["ts", "tsx"],
+    }),
   ].filter(Boolean) as webpack.Configuration["plugins"],
   performance: {
     maxAssetSize: 800000,
