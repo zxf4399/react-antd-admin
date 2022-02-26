@@ -9,6 +9,7 @@ module.exports = function (api) {
       [
         "@babel/preset-react",
         {
+          importSource: "@emotion/react",
           runtime: "automatic",
         },
       ],
@@ -23,6 +24,7 @@ module.exports = function (api) {
           style: "css",
         },
       ],
+      "@emotion/babel-plugin",
     ].filter(Boolean),
   };
 };
