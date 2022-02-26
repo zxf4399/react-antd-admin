@@ -8,3 +8,4 @@
 ## TODO
 
 - 动态面包屑
+- dist 输出 page 开头的 js 文件
