@@ -54,7 +54,26 @@ const config: webpack.Configuration = {
               /[\\/]node_modules[\\/](.*?)([\\/]|$)/
             )[1];
 
-            return `npm/${packageName}`;
+            return `node_modules/${packageName}`;
+          },
+        },
+        page: {
+          test: /[\\/]src[\\/]pages[\\/]/,
+          enforce: true,
+          name(module: {
+            identifier: () => string;
+            context: { match: (arg0: RegExp) => string[] };
+          }) {
+            const fileName = module
+              .identifier()
+              .split("/")
+              .reduceRight((item) => item)
+              .split(".")[0];
+            const dirName = module.context.match(
+              /[\\/]src[\\/]pages[\\/](.*?)$/
+            )[1];
+
+            return `pages/${dirName}/${fileName}`;
           },
         },
       },
