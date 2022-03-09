@@ -1,11 +1,18 @@
-const isDev = process.env.NODE_ENV !== "production";
+const isDev = process.env.NODE_ENV === "development";
 
 module.exports = function (api) {
   api.cache.using(() => isDev);
 
   return {
     presets: [
-      "@babel/preset-env",
+      [
+        "@babel/preset-env",
+        {
+          targets: {
+            node: "current",
+          },
+        },
+      ],
       [
         "@babel/preset-react",
         {
