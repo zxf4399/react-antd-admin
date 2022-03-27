@@ -1,13 +1,12 @@
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import path from "path";
-import postcssPresetEnv from "postcss-preset-env";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
-import webpack, { cache } from "webpack";
+import webpack from "webpack";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import "webpack-dev-server";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 const isDev = process.env.NODE_ENV === "development";
 const isProd = process.env.NODE_ENV === "production";
@@ -34,14 +33,7 @@ const config: webpack.Configuration = {
               importLoaders: 1,
             },
           },
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                plugins: [postcssPresetEnv()],
-              },
-            },
-          },
+          "postcss-loader",
         ],
       },
     ],
