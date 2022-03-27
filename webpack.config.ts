@@ -1,13 +1,16 @@
+import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import ESLintPlugin from "eslint-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import path from "path";
-import webpack from "webpack";
-import "webpack-dev-server";
-import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import postcssPresetEnv from "postcss-preset-env";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
+import webpack, { cache } from "webpack";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
-import ESLintPlugin from "eslint-webpack-plugin";
+import "webpack-dev-server";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
-const isDev = process.env.NODE_ENV !== "production";
+const isDev = process.env.NODE_ENV === "development";
+const isProd = process.env.NODE_ENV === "production";
 
 const config: webpack.Configuration = {
   mode: isDev ? "development" : "production",
@@ -23,7 +26,23 @@ const config: webpack.Configuration = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: [
+          isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [postcssPresetEnv()],
+              },
+            },
+          },
+        ],
       },
     ],
   },
@@ -31,6 +50,26 @@ const config: webpack.Configuration = {
   devServer: {
     historyApiFallback: true,
     hot: true,
+  },
+  optimization: {
+    runtimeChunk: "single",
+    splitChunks: {
+      chunks: "all",
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          enforce: true,
+          name(module: { context: string }) {
+            const packageName = module.context.match(
+              /[\\/]node_modules[\\/]\.pnpm[\\/](.*?)([\\/]|$)/
+            )?.[1];
+            const index = module.context.indexOf(packageName || "");
+
+            return `.pnpm/${module.context.slice(index)}`;
+          },
+        },
+      },
+    },
   },
   output: {
     clean: true,
@@ -41,50 +80,12 @@ const config: webpack.Configuration = {
     extensions: [".ts", ".tsx", ".js"],
     plugins: [new TsconfigPathsPlugin()],
   },
-  optimization: {
-    runtimeChunk: "single",
-    splitChunks: {
-      chunks: "all",
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          enforce: true,
-          name(module: { context: { match: (arg0: RegExp) => string[] } }) {
-            const packageName = module.context.match(
-              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
-            )[1];
-
-            return `node_modules/${packageName}`;
-          },
-        },
-        page: {
-          test: /[\\/]src[\\/]pages[\\/]/,
-          enforce: true,
-          name(module: {
-            identifier: () => string;
-            context: { match: (arg0: RegExp) => string[] };
-          }) {
-            const fileName = module
-              .identifier()
-              .split("/")
-              .reduceRight((item) => item)
-              .split(".")[0];
-            const dirName = module.context.match(
-              /[\\/]src[\\/]pages[\\/](.*?)$/
-            )[1];
-
-            return `pages/${dirName}/${fileName}`;
-          },
-        },
-      },
-    },
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
     }),
     isDev && new ReactRefreshWebpackPlugin(),
-    !isDev &&
+    isProd &&
       new BundleAnalyzerPlugin({
         analyzerMode: "disabled",
         generateStatsFile: true,
@@ -92,6 +93,7 @@ const config: webpack.Configuration = {
     new ESLintPlugin({
       extensions: ["ts", "tsx"],
     }),
+    isProd && new MiniCssExtractPlugin(),
   ].filter(Boolean) as webpack.Configuration["plugins"],
   performance: {
     maxAssetSize: 800000,
