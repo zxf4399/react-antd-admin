@@ -1,13 +1,13 @@
 import { BasicLayout } from "@/components/layout";
 import { Provider } from "react-redux";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import routes from "./routes";
 import { store } from "./store";
 
 const App = () => {
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <HashRouter>
         <BasicLayout>
           <Routes>
             {routes.map((route) => (
@@ -19,7 +19,7 @@ const App = () => {
             ))}
           </Routes>
         </BasicLayout>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   );
 };

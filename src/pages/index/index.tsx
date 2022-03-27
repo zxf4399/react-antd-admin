@@ -1,6 +1,7 @@
 import "./test.css";
+
 const Index = () => {
-  return <div className="box">首页</div>;
+  return <div className="box">Test</div>;
 };
 
 export default Index;

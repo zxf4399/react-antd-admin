@@ -28,6 +28,7 @@ module.exports = function (api) {
         "import",
         {
           libraryName: "antd",
+          libraryDirectory: "es",
           style: "css",
         },
       ],
