@@ -1,5 +1,11 @@
 # react-antd-admin
 
+## 技术栈
+
+### 包管理器
+
+pnpm
+
 ## 功能
 
 ```md
