@@ -1,0 +1,1 @@
+{"version":3,"file":"6444.6d11b59a4ab64721e0a3.js","mappings":"6IAIA,UAJc,KACL","sources":["webpack://react-antd-admin/./src/pages/index/index.tsx"],"sourcesContent":["const Index = () => {\n  return <div>首页</div>;\n};\n\nexport default Index;\n"],"names":[],"sourceRoot":""}

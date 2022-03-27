@@ -1,1 +1,0 @@
-{"version":3,"file":"6444.b930fbc447810fc6e856.js","mappings":"6IAMA,UAJc,KACL,eAAKA,UAAU,MAAf","sources":["webpack://react-antd-admin/./src/pages/index/index.tsx"],"sourcesContent":["import \"./test.css\";\n\nconst Index = () => {\n  return <div className=\"box\">Test</div>;\n};\n\nexport default Index;\n"],"names":["className"],"sourceRoot":""}

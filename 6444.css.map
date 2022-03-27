@@ -1,1 +1,0 @@
-{"version":3,"file":"6444.css","mappings":"AAAA;EACE,YAAY;ECDd;EAAA;ADGA;AADE;ECFF;EAAA;EAAA;EAAA;EAAA;EAAA;ADEqB;AAAnB;ECFF;EAAA;EAAA;EAAA;EAAA;ADEqB","sources":["webpack://react-antd-admin/./src/pages/index/test.css","webpack://react-antd-admin/<no source>"],"sourcesContent":[".box {\n  width: 100px;\n  aspect-ratio: \"2:1\";\n}\n"],"names":[],"sourceRoot":""}
