@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_antd_admin=self.webpackChunkreact_antd_admin||[]).push([[6444],{6444:function(a,e,t){t.r(e);var n=t(56);e.default=()=>(0,n.tZ)("div",{className:"box",children:"Test"})}}]);
+//# sourceMappingURL=6444.b930fbc447810fc6e856.js.map
