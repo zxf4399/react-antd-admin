@@ -42,7 +42,7 @@ const BasicLayout: React.FC = ({ children }) => {
             <MenuFoldOutlined onClick={toggleCollapsed} />
           )}
         </Header>
-        <Content>{children}</Content>
+        <Content style={{ padding: 24 }}>{children}</Content>
       </Layout>
     </Layout>
   );

@@ -24,16 +24,23 @@ const config: webpack.Configuration = {
         },
       },
       {
-        test: /\.css$/,
+        test: /\.(c|sc)ss$/,
         use: [
           isDev ? "style-loader" : MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
-              importLoaders: 1,
+              importLoaders: 2,
+              modules: {
+                exportLocalsConvention: "camelCase",
+                localIdentName: "[path][name]__[local]--[hash:base64:5]",
+                auto: (resourcePath: string) =>
+                  resourcePath.endsWith(".module.scss"),
+              },
             },
           },
           "postcss-loader",
+          "sass-loader",
         ],
       },
     ],

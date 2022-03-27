@@ -49,6 +49,8 @@ specifiers:
   react-refresh: ^0.11.0
   react-router-dom: ^6.2.2
   react-test-renderer: ^17.0.2
+  sass: ^1.49.9
+  sass-loader: ^12.6.0
   style-loader: ^3.3.1
   ts-node: ^10.7.0
   tsconfig-paths-webpack-plugin: ^3.5.2
@@ -109,6 +111,8 @@ devDependencies:
   prettier: 2.6.1
   react-refresh: 0.11.0
   react-test-renderer: 17.0.2_react@17.0.2
+  sass: 1.49.9
+  sass-loader: 12.6.0_sass@1.49.9+webpack@5.70.0
   style-loader: 3.3.1_webpack@5.70.0
   ts-node: 10.7.0_ee885bc7281b682b6adbed6ae09ee090
   tsconfig-paths-webpack-plugin: 3.5.2
@@ -4747,6 +4751,10 @@ packages:
     resolution: {integrity: sha512-lk7UNmSbAukB5B6dh9fnh5D0bJTOFKxVg2cyJWTYrWRfhLrLMBquONcUs3aFq507hNoIZEDDh8lb8UtOizSMhA==}
     dev: false
 
+  /immutable/4.0.0:
+    resolution: {integrity: sha512-zIE9hX70qew5qTUjSS7wi1iwj/l7+m54KWU247nhM3v806UdGj1yDndXj+IOYxxtW9zyLI+xqFNZjTuDaLUqFw==}
+    dev: true
+
   /import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -7693,6 +7701,41 @@ packages:
 
   /safer-buffer/2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+    dev: true
+
+  /sass-loader/12.6.0_sass@1.49.9+webpack@5.70.0:
+    resolution: {integrity: sha512-oLTaH0YCtX4cfnJZxKSLAyglED0naiYfNG1iXfU5w1LNZ+ukoA5DtyDIN5zmKVZwYNJP4KRc5Y3hkWga+7tYfA==}
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      fibers: '>= 3.1.0'
+      node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
+      sass: ^1.3.0
+      sass-embedded: '*'
+      webpack: ^5.0.0
+    peerDependenciesMeta:
+      fibers:
+        optional: true
+      node-sass:
+        optional: true
+      sass:
+        optional: true
+      sass-embedded:
+        optional: true
+    dependencies:
+      klona: 2.0.5
+      neo-async: 2.6.2
+      sass: 1.49.9
+      webpack: 5.70.0_webpack-cli@4.9.2
+    dev: true
+
+  /sass/1.49.9:
+    resolution: {integrity: sha512-YlYWkkHP9fbwaFRZQRXgDi3mXZShslVmmo+FVK3kHLUELHHEYrCmL1x6IUjC7wLS6VuJSAFXRQS/DxdsC4xL1A==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.0.0
+      source-map-js: 1.0.2
     dev: true
 
   /saxes/5.0.1:

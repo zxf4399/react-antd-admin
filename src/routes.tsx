@@ -3,6 +3,7 @@ import React, { Suspense } from "react";
 
 const Index = React.lazy(() => import("@/pages/index"));
 const Counter = React.lazy(() => import("@/pages/counter"));
+const CssAspectRatio = React.lazy(() => import("@/pages/css/aspect-ratio"));
 
 const routes = [
   {
@@ -22,6 +23,15 @@ const routes = [
     ),
     name: "计数器",
     path: "/counter",
+  },
+  {
+    element: (
+      <Suspense fallback={<Spin />}>
+        <CssAspectRatio />
+      </Suspense>
+    ),
+    name: "长宽比",
+    path: "/css/aspect-ratio",
   },
 ];
 
