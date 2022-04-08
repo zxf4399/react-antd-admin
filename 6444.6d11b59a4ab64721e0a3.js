@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact_antd_admin=self.webpackChunkreact_antd_admin||[]).push([[6444],{6444:function(a,e,n){n.r(e);var t=n(56);e.default=()=>(0,t.tZ)("div",{children:"首页"})}}]);
-//# sourceMappingURL=6444.6d11b59a4ab64721e0a3.js.map
