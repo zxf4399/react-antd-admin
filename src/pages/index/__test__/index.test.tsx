@@ -1,6 +1,6 @@
 import TestRenderer from "react-test-renderer";
 
-import PageIndex from "../";
+import PageIndex from "..";
 
 const testRenderer = TestRenderer.create(<PageIndex />);
 

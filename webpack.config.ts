@@ -43,6 +43,10 @@ const config: webpack.Configuration = {
           "sass-loader",
         ],
       },
+      {
+        test: /\.md$/,
+        type: "asset/source",
+      },
     ],
   },
   devtool: isDev ? "eval-source-map" : "source-map",

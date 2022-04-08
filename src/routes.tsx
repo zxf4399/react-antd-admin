@@ -4,6 +4,7 @@ import React, { Suspense } from "react";
 const Index = React.lazy(() => import("@/pages/index"));
 const Counter = React.lazy(() => import("@/pages/counter"));
 const CssAspectRatio = React.lazy(() => import("@/pages/css/aspect-ratio"));
+const AwesomeMacOS = React.lazy(() => import("@/pages/awesome/macOS"));
 
 const routes = [
   {
@@ -32,6 +33,15 @@ const routes = [
     ),
     name: "长宽比",
     path: "/css/aspect-ratio",
+  },
+  {
+    element: (
+      <Suspense fallback={<Spin />}>
+        <AwesomeMacOS />
+      </Suspense>
+    ),
+    name: "macOS",
+    path: "/awesome/macOS",
   },
 ];
 
