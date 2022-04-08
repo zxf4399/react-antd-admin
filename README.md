@@ -15,5 +15,6 @@ pnpm
 
 ## TODO
 
+- Service Workers
 - 动态面包屑
 - 暗黑主题
