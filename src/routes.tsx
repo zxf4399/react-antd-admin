@@ -1,48 +1,70 @@
-import { Spin } from "antd";
-import React, { Suspense } from "react";
+import React from "react";
 
 const Index = React.lazy(() => import("@/pages/index"));
 const Counter = React.lazy(() => import("@/pages/counter"));
 const CssAspectRatio = React.lazy(() => import("@/pages/css/aspect-ratio"));
 const AwesomeMacOS = React.lazy(() => import("@/pages/awesome/macOS"));
 
-const routes = [
+interface Route {
+  children?: Route[];
+  element?: React.ReactNode;
+  name: string;
+  path: string;
+}
+
+export type Routes = Route[];
+
+const routes: Routes = [
   {
-    element: (
-      <Suspense fallback={<Spin />}>
-        <Index />
-      </Suspense>
-    ),
+    element: <Index />,
     name: "首页",
     path: "/",
   },
   {
-    element: (
-      <Suspense fallback={<Spin />}>
-        <Counter />
-      </Suspense>
-    ),
+    element: <Counter />,
     name: "计数器",
     path: "/counter",
   },
   {
-    element: (
-      <Suspense fallback={<Spin />}>
-        <CssAspectRatio />
-      </Suspense>
-    ),
-    name: "长宽比",
-    path: "/css/aspect-ratio",
+    children: [
+      {
+        element: <CssAspectRatio />,
+        name: "长宽比",
+        path: "/aspect-ratio",
+      },
+    ],
+    name: "CSS",
+    path: "/css",
   },
   {
-    element: (
-      <Suspense fallback={<Spin />}>
-        <AwesomeMacOS />
-      </Suspense>
-    ),
-    name: "macOS",
-    path: "/awesome/macOS",
+    children: [
+      {
+        element: <AwesomeMacOS />,
+        name: "macOS",
+        path: "/macOS",
+      },
+    ],
+    name: "Awesome",
+    path: "/awesome",
   },
 ];
+
+export const getFlattenRoutes = (routes: Routes, parentPath = "") => {
+  let flattenRoutes: Routes = [];
+
+  for (let i = 0; i < routes.length; i++) {
+    const currentPath = `${parentPath}${routes[i].path}`;
+
+    if (routes[i].children) {
+      flattenRoutes = flattenRoutes.concat(
+        getFlattenRoutes(routes[i].children as Routes, currentPath)
+      );
+    } else {
+      flattenRoutes.push({ ...routes[i], path: currentPath });
+    }
+  }
+
+  return flattenRoutes;
+};
 
 export default routes;

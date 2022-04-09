@@ -1,4 +1,4 @@
-import routes from "@/routes";
+import routes, { Routes } from "@/routes";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { css } from "@emotion/react";
 import { useMemoizedFn, useSetState } from "ahooks";
@@ -19,6 +19,26 @@ const BasicLayout: React.FC = ({ children }) => {
     setState((prevState) => ({ collapsed: !prevState.collapsed }));
   });
 
+  const renderMenuItems = useMemoizedFn((routes: Routes, parentPath = "") => {
+    return routes.map((route) => {
+      const currentPath = `${parentPath}${route.path}`;
+
+      if (route.children) {
+        return (
+          <Menu.SubMenu key={currentPath} title={route.name}>
+            {renderMenuItems(route.children, currentPath)}
+          </Menu.SubMenu>
+        );
+      } else {
+        return (
+          <Menu.Item key={currentPath}>
+            <Link to={currentPath}>{route.name}</Link>
+          </Menu.Item>
+        );
+      }
+    });
+  });
+
   return (
     <Layout
       css={css`
@@ -26,12 +46,22 @@ const BasicLayout: React.FC = ({ children }) => {
       `}
     >
       <Sider collapsed={state.collapsed} collapsible trigger={null}>
-        <Menu defaultSelectedKeys={[location.pathname]} theme="dark">
-          {routes.map((route) => (
-            <Menu.Item key={route.path}>
-              <Link to={route.path}>{route.name}</Link>
-            </Menu.Item>
-          ))}
+        <div
+          css={css`
+            height: 32px;
+            line-height: 32px;
+            margin: 16px 24px;
+            color: #fff;
+          `}
+        >
+          技术栈
+        </div>
+        <Menu
+          defaultSelectedKeys={[location.pathname]}
+          mode="inline"
+          theme="dark"
+        >
+          {renderMenuItems(routes)}
         </Menu>
       </Sider>
       <Layout>
@@ -42,7 +72,13 @@ const BasicLayout: React.FC = ({ children }) => {
             <MenuFoldOutlined onClick={toggleCollapsed} />
           )}
         </Header>
-        <Content style={{ padding: 24 }}>{children}</Content>
+        <Content
+          css={css`
+            padding: 24px;
+          `}
+        >
+          {children}
+        </Content>
       </Layout>
     </Layout>
   );
