@@ -3,10 +3,18 @@ import React from "react";
 import type { RouteObject } from "react-router-dom";
 import SuspenseWithFallback from "./components/common/suspense-with-fallback";
 
-const Index = React.lazy(() => import("@/pages/index"));
-const Counter = React.lazy(() => import("@/pages/counter"));
-const CssAspectRatio = React.lazy(() => import("@/pages/css/aspect-ratio"));
-const AwesomeMacOS = React.lazy(() => import("@/pages/awesome/macOS"));
+const Index = React.lazy(
+  () => import(/* webpackPrefetch: true */ "@/pages/index")
+);
+const Counter = React.lazy(
+  () => import(/* webpackPrefetch: true */ "@/pages/counter")
+);
+const CssAspectRatio = React.lazy(
+  () => import(/* webpackPrefetch: true */ "@/pages/css/aspect-ratio")
+);
+const AwesomeMacOS = React.lazy(
+  () => import(/* webpackPrefetch: true */ "@/pages/awesome/macOS")
+);
 
 interface MenuItem {
   children?: MenuItem[];
