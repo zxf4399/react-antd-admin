@@ -9,10 +9,10 @@ pnpm
 ```md
 - 全局功能
   - 动态侧边栏
+  - 动态面包屑
 ```
 
 ## TODO
 
 - Service Workers
-- 动态面包屑
 - 暗黑主题
