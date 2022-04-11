@@ -3,7 +3,11 @@ import { Breadcrumb as AntdBreadcrumb } from "antd";
 import { useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const Breadcrumb = () => {
+interface BreadcrumbProps {
+  className?: string;
+}
+
+const Breadcrumb = ({ className }: BreadcrumbProps) => {
   const location = useLocation();
 
   const indexName = useMemo(() => menuMap["/"]?.name, []);
@@ -17,7 +21,7 @@ const Breadcrumb = () => {
   );
 
   return (
-    <AntdBreadcrumb>
+    <AntdBreadcrumb className={className}>
       <AntdBreadcrumb.Item key="/">
         <Link to="/">{indexName}</Link>
       </AntdBreadcrumb.Item>

@@ -19,7 +19,6 @@ const Layout = () => {
   const toggleCollapsed = useMemoizedFn(() => {
     setState((prevState) => ({ collapsed: !prevState.collapsed }));
   });
-
   const renderMenuList = useMemoizedFn((menuList: MenuList) => {
     return menuList.map((menuItem) => {
       if (menuItem.children) {
@@ -76,7 +75,11 @@ const Layout = () => {
             padding: 24px;
           `}
         >
-          <Breadcrumb />
+          <Breadcrumb
+            css={css`
+              margin-bottom: 10px;
+            `}
+          />
           <Outlet />
         </Content>
       </AntdLayout>
