@@ -91,7 +91,7 @@ const config: webpack.Configuration = {
         description: "TECH-STACK",
         icons: [
           {
-            src: "https://raw.githubusercontent.com/zxf4399/oss/main/2022/04/11/tech-stack-icon-1024.jpg",
+            src: "https://raw.githubusercontent.com/zxf4399/oss/main/2022/04/11/tech-stack-icon-1024.png",
             size: "1024 * 1024",
           },
         ],
