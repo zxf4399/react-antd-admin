@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_antd_admin=self.webpackChunkreact_antd_admin||[]).push([[9803],{5492:function(a,n,t){t.r(n);var e=t(5367),c=t(1407),r=t(56);n.default=()=>(0,r.tZ)(e.D,{children:c})},1407:function(a){a.exports="# macOS\n\n## Productivity\n\n[raycast](https://www.raycast.com/)\n\n## Package manager\n\n[brew](https://github.com/Homebrew/brew) - 🍺 The missing package manager for macOS (or Linux)\n"}}]);
+//# sourceMappingURL=9803.90a85bb80673ad3dc358.js.map
