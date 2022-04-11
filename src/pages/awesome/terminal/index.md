@@ -10,6 +10,10 @@
 
 [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) - Good-lookin' diffs. Actually… nah… The best-lookin' diffs. 🎉
 
+## Neovim
+
+[neovim](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability
+
 ## Node
 
 [fnm](https://github.com/Schniz/fnm) - 🚀 Fast and simple Node.js version manager, built in Rust
