@@ -89,7 +89,7 @@ const config: webpack.Configuration = {
     isProd &&
       new WebpackPwaManifest({
         name: "TECH-STACK",
-        publicPath: "/",
+        publicPath: "/tech-stack",
       }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
