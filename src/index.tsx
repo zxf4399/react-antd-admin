@@ -8,7 +8,7 @@ import { store } from "./store";
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
-      .register("/service-worker.js")
+      .register("/tech-stack/service-worker.js")
       .then((registration) => {
         console.log("SW registered: ", registration);
       })
