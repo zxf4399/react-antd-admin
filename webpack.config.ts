@@ -1,3 +1,5 @@
+import "webpack-dev-server";
+
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
@@ -6,9 +8,9 @@ import path from "path";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
 import webpack from "webpack";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
-import "webpack-dev-server";
-import WorkboxPlugin from "workbox-webpack-plugin";
 import WebpackPwaManifest from "webpack-pwa-manifest";
+import WorkboxPlugin from "workbox-webpack-plugin";
+
 import { isDev, isProd } from "./src/utils/const";
 
 const config: webpack.Configuration = {

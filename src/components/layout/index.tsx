@@ -1,10 +1,12 @@
-import routes, { getMenuList, MenuList } from "@/routes";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { css } from "@emotion/react";
 import { useMemoizedFn, useSetState } from "ahooks";
 import { Layout as AntdLayout, Menu } from "antd";
 import { memo, useMemo } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
+
+import routes, { getMenuList, MenuList } from "@/routes";
+
 import Breadcrumb from "./breadcrumb";
 
 const { Content, Header, Sider } = AntdLayout;

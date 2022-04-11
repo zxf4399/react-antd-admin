@@ -1,5 +1,7 @@
-import { useAppDispatch, useAppSelector } from "@/hooks";
 import { Button, Typography } from "antd";
+
+import { useAppDispatch, useAppSelector } from "@/hooks";
+
 import counterSlice from "./slice";
 
 const { Paragraph } = Typography;

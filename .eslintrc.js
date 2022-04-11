@@ -4,7 +4,7 @@ module.exports = {
   env: {
     node: true,
   },
-  plugins: ["@typescript-eslint", "@emotion"],
+  plugins: ["@typescript-eslint", "@emotion", "simple-import-sort"],
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -12,5 +12,7 @@ module.exports = {
   ],
   rules: {
     "@typescript-eslint/no-explicit-any": ["error", { ignoreRestArgs: false }],
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "error",
   },
 };
