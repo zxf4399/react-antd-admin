@@ -3,7 +3,7 @@ import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { css } from "@emotion/react";
 import { useMemoizedFn, useSetState } from "ahooks";
 import { Layout as AntdLayout, Menu } from "antd";
-import { memo } from "react";
+import { memo, useMemo } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import Breadcrumb from "./breadcrumb";
 
@@ -15,6 +15,16 @@ const Layout = () => {
   const [state, setState] = useSetState({
     collapsed: false,
   });
+
+  const defaultOpenKeys = useMemo(
+    () =>
+      location.pathname
+        .split("/")
+        .filter(Boolean)
+        .filter((_, i) => i === 0)
+        .map((item) => `/${item}`),
+    []
+  );
 
   const toggleCollapsed = useMemoizedFn(() => {
     setState((prevState) => ({ collapsed: !prevState.collapsed }));
@@ -55,6 +65,7 @@ const Layout = () => {
           技术栈
         </div>
         <Menu
+          defaultOpenKeys={defaultOpenKeys}
           defaultSelectedKeys={[location.pathname]}
           mode="inline"
           theme="dark"
