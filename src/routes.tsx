@@ -6,14 +6,17 @@ import SuspenseWithFallback from "./components/common/suspense-with-fallback";
 const Index = React.lazy(
   () => import(/* webpackPrefetch: true */ "@/pages/index")
 );
+const AwesomeMacOS = React.lazy(
+  () => import(/* webpackPrefetch: true */ "@/pages/awesome/macOS")
+);
+const AwesomeTerminal = React.lazy(
+  () => import(/* webpackPrefetch: true */ "@/pages/awesome/terminal")
+);
 const Counter = React.lazy(
   () => import(/* webpackPrefetch: true */ "@/pages/counter")
 );
 const CssAspectRatio = React.lazy(
   () => import(/* webpackPrefetch: true */ "@/pages/css/aspect-ratio")
-);
-const AwesomeMacOS = React.lazy(
-  () => import(/* webpackPrefetch: true */ "@/pages/awesome/macOS")
 );
 
 interface MenuItem {
@@ -36,6 +39,27 @@ const routes: RouteObject[] = [
         index: true,
       },
       {
+        children: [
+          {
+            element: (
+              <SuspenseWithFallback>
+                <AwesomeTerminal />
+              </SuspenseWithFallback>
+            ),
+            path: "/awesome/terminal",
+          },
+          {
+            element: (
+              <SuspenseWithFallback>
+                <AwesomeMacOS />
+              </SuspenseWithFallback>
+            ),
+            path: "/awesome/macOS",
+          },
+        ],
+        path: "/awesome",
+      },
+      {
         element: (
           <SuspenseWithFallback>
             <Counter />
@@ -55,19 +79,6 @@ const routes: RouteObject[] = [
           },
         ],
         path: "/css",
-      },
-      {
-        children: [
-          {
-            element: (
-              <SuspenseWithFallback>
-                <AwesomeMacOS />
-              </SuspenseWithFallback>
-            ),
-            path: "/awesome/macOS",
-          },
-        ],
-        path: "/awesome",
       },
     ],
     element: <Layout />,
@@ -89,6 +100,9 @@ export const menuMap: Record<
   },
   "/awesome/macOS": {
     name: "macOS",
+  },
+  "/awesome/terminal": {
+    name: "终端",
   },
   "/counter": {
     name: "计数器",
