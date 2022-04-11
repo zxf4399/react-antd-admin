@@ -1,0 +1,15 @@
+{
+  "icons": [
+    {
+      "src": "/tech-stack/icon_1024x1024.ca6d4e0909a74fcc55e3aca79d4e084e.jpeg",
+      "sizes": "1024x1024",
+      "type": "image/jpeg"
+    }
+  ],
+  "name": "TECH-STACK",
+  "short_name": "TECH-STACK",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "TECH-STACK"
+}
