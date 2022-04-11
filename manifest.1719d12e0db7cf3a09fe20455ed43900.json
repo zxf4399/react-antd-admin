@@ -1,0 +1,7 @@
+{
+  "name": "TECH-STACK",
+  "short_name": "TECH-STACK",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "."
+}
