@@ -8,9 +8,8 @@ import webpack from "webpack";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import "webpack-dev-server";
 import WorkboxPlugin from "workbox-webpack-plugin";
-
-const isDev = process.env.NODE_ENV === "development";
-const isProd = process.env.NODE_ENV === "production";
+import WebpackPwaManifest from "webpack-pwa-manifest";
+import { isDev, isProd } from "./src/utils/const";
 
 const config: webpack.Configuration = {
   mode: isDev ? "development" : "production",
@@ -98,10 +97,15 @@ const config: webpack.Configuration = {
       extensions: ["ts", "tsx"],
     }),
     isProd && new MiniCssExtractPlugin(),
-    new WorkboxPlugin.GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true,
-    }),
+    isProd &&
+      new WorkboxPlugin.GenerateSW({
+        clientsClaim: true,
+        skipWaiting: true,
+      }),
+    isProd &&
+      new WebpackPwaManifest({
+        name: "TECH-STACK",
+      }),
   ].filter(Boolean) as webpack.Configuration["plugins"],
   performance: {
     maxAssetSize: 800000,

@@ -8,13 +8,17 @@ pnpm
 
 ```md
 - 全局功能
+
   - 动态侧边栏
   - 动态面包屑
+
 - Webpack
+
   - 路由懒加载 (prefetch)
+
+- Service Workers
 ```
 
 ## TODO
 
-- Service Workers
 - 暗黑主题
