@@ -84,6 +84,11 @@ const config: webpack.Configuration = {
     plugins: [new TsconfigPathsPlugin()],
   },
   plugins: [
+    isProd &&
+      new WebpackPwaManifest({
+        name: "TECH-STACK",
+        publicPath: "/",
+      }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
     }),
@@ -101,10 +106,6 @@ const config: webpack.Configuration = {
       new WorkboxPlugin.GenerateSW({
         clientsClaim: true,
         skipWaiting: true,
-      }),
-    isProd &&
-      new WebpackPwaManifest({
-        name: "TECH-STACK",
       }),
   ].filter(Boolean) as webpack.Configuration["plugins"],
   performance: {
