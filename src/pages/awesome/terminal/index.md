@@ -1,5 +1,9 @@
 # terminal
 
+## Filemanager
+
+[ranger](https://github.com/ranger/ranger) - A VIM-inspired filemanager for the console
+
 ## Fish
 
 [fish](https://github.com/fish-shell/fish-shell) - The user-friendly command line shell.
