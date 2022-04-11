@@ -1,8 +1,11 @@
 import "@/styles/base.css";
-import { isProd } from "@/utils/const";
+
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
+
+import { isProd } from "@/utils/const";
+
 import App from "./App";
 import { store } from "./store";
 

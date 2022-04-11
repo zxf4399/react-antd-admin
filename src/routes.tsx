@@ -1,6 +1,8 @@
-import Layout from "@/components/layout";
 import React from "react";
 import type { RouteObject } from "react-router-dom";
+
+import Layout from "@/components/layout";
+
 import SuspenseWithFallback from "./components/common/suspense-with-fallback";
 
 const Index = React.lazy(
