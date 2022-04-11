@@ -22,3 +22,4 @@ pnpm
 ## TODO
 
 - 暗黑主题
+- React 18
