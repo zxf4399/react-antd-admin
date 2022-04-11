@@ -1,16 +1,14 @@
 # terminal
 
-## Shell
+## Fish
 
 [fish](https://github.com/fish-shell/fish-shell) - The user-friendly command line shell.
-
-### Framework
-
 [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) - The Fish Shell Framework
-
-### Plugins
-
 [git](https://github.com/jhillyerd/plugin-git) - Git plugin for Oh My Fish (similar to oh-my-zsh git)
+
+## Git
+
+[diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) - Good-lookin' diffs. Actually… nah… The best-lookin' diffs. 🎉
 
 ## Node
 
@@ -19,3 +17,8 @@
 ## Prompt
 
 [starship](https://github.com/starship/starship) - ☄🌌️ The minimal, blazing-fast, and infinitely customizable prompt for any shell!
+
+## Tmux
+
+[tmux](https://github.com/tmux/tmux) - tmux is a terminal multiplexer
+[Oh my tmux](https://github.com/gpakosz/.tmux) - 🇫🇷 Oh my tmux! My self-contained, pretty & versatile tmux configuration made with ❤️

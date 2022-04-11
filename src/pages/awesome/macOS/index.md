@@ -2,7 +2,7 @@
 
 ## Productivity
 
-[raycast](https://www.raycast.com/)
+[raycast](https://www.raycast.com/) - Script Commands let you tailor Raycast to your needs. Think of them as little productivity boosts throughout your day.
 
 ## Package manager
 
