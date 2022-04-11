@@ -9,6 +9,9 @@ const Index = React.lazy(
 const AwesomeMacOS = React.lazy(
   () => import(/* webpackPrefetch: true */ "@/pages/awesome/macOS")
 );
+const AwesomeNpm = React.lazy(
+  () => import(/* webpackPrefetch: true */ "@/pages/awesome/npm")
+);
 const AwesomeTerminal = React.lazy(
   () => import(/* webpackPrefetch: true */ "@/pages/awesome/terminal")
 );
@@ -47,6 +50,14 @@ const routes: RouteObject[] = [
               </SuspenseWithFallback>
             ),
             path: "/awesome/terminal",
+          },
+          {
+            element: (
+              <SuspenseWithFallback>
+                <AwesomeNpm />
+              </SuspenseWithFallback>
+            ),
+            path: "/awesome/npm",
           },
           {
             element: (
@@ -100,6 +111,9 @@ export const menuMap: Record<
   },
   "/awesome/macOS": {
     name: "macOS",
+  },
+  "/awesome/npm": {
+    name: "npm",
   },
   "/awesome/terminal": {
     name: "终端",
