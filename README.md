@@ -1,8 +1,7 @@
 # 技术栈
 
-## 包管理器
-
 pnpm
+React 18
 
 ## 功能
 
@@ -19,7 +18,3 @@ pnpm
 
 - Service Workers
 ```
-
-## TODO
-
-- React 18
