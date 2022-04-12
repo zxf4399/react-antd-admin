@@ -111,12 +111,7 @@ const config: webpack.Configuration = {
       extensions: ["ts", "tsx"],
     }),
     isProd && new MiniCssExtractPlugin(),
-    isProd &&
-      new WorkboxPlugin.GenerateSW({
-        cleanupOutdatedCaches: true,
-        clientsClaim: true,
-        skipWaiting: true,
-      }),
+    isProd && new WorkboxPlugin.GenerateSW({}),
   ].filter(Boolean) as webpack.Configuration["plugins"],
   performance: {
     maxAssetSize: 800000,
