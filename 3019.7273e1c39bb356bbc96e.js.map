@@ -1,0 +1,1 @@
+{"version":3,"file":"3019.7273e1c39bb356bbc96e.js","mappings":"+LAMA,EAFY,KAAM,QAAC,IAAD,U","sources":["webpack://react-antd-admin/./src/pages/awesome/npm/index.tsx"],"sourcesContent":["import ReactMarkdown from \"react-markdown\";\n\nimport md from \"./index.md\";\n\nconst Npm = () => <ReactMarkdown>{md}</ReactMarkdown>;\n\nexport default Npm;\n"],"names":[],"sourceRoot":""}

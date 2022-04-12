@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact_antd_admin=self.webpackChunkreact_antd_admin||[]).push([[4996],{4996:function(n,t,i){i.r(t);var c=i(5367),e=i(4303),a=i(56);t.default=()=>(0,a.tZ)(c.D,{children:e})},4303:function(n){n.exports="# npm\n\n## Cli\n\n[cz-cli](https://github.com/commitizen/cz-cli) - The commitizen command line utility.\n"}}]);
-//# sourceMappingURL=4996.152b5796c46c597fd573.js.map
