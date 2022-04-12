@@ -1,9 +1,13 @@
 import { Spin } from "antd";
-import type { FC } from "react";
+import type { ReactNode } from "react";
 import { Suspense } from "react";
 
-const SuspenseWithFallback: FC = ({ children }) => (
-  <Suspense fallback={<Spin />}>{children}</Suspense>
+interface SuspenseWithFallbackProps {
+  children: ReactNode;
+}
+
+const SuspenseWithFallback = ({ children }: SuspenseWithFallbackProps) => (
+  <Suspense fallback={<Spin delay={200} />}>{children}</Suspense>
 );
 
 export default SuspenseWithFallback;

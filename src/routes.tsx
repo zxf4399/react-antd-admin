@@ -17,9 +17,6 @@ const AwesomeNpm = React.lazy(
 const AwesomeTerminal = React.lazy(
   () => import(/* webpackPrefetch: true */ "@/pages/awesome/terminal")
 );
-const Counter = React.lazy(
-  () => import(/* webpackPrefetch: true */ "@/pages/counter")
-);
 const CssAspectRatio = React.lazy(
   () => import(/* webpackPrefetch: true */ "@/pages/css/aspect-ratio")
 );
@@ -73,14 +70,6 @@ const routes: RouteObject[] = [
         path: "/awesome",
       },
       {
-        element: (
-          <SuspenseWithFallback>
-            <Counter />
-          </SuspenseWithFallback>
-        ),
-        path: "/counter",
-      },
-      {
         children: [
           {
             element: (
@@ -119,9 +108,6 @@ export const menuMap: Record<
   },
   "/awesome/terminal": {
     name: "终端",
-  },
-  "/counter": {
-    name: "计数器",
   },
   "/css": {
     name: "CSS",
