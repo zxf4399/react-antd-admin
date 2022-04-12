@@ -1,36 +1,28 @@
 # terminal
 
-## Filemanager
-
-[ranger](https://github.com/ranger/ranger) - A VIM-inspired filemanager for the console
-
-## Fish
-
-[fish](https://github.com/fish-shell/fish-shell) - The user-friendly command line shell.
 [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) - The Fish Shell Framework
-[git](https://github.com/jhillyerd/plugin-git) - Git plugin for Oh My Fish (similar to oh-my-zsh git)
 
-## Git
+[Oh my tmux](https://github.com/gpakosz/.tmux) - 🇫🇷 Oh my tmux! My self-contained, pretty & versatile tmux configuration made with ❤️
 
 [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) - Good-lookin' diffs. Actually… nah… The best-lookin' diffs. 🎉
 
-## Neovim
-
-[neovim](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability
-
-## Node
+[fish](https://github.com/fish-shell/fish-shell) - The user-friendly command line shell.
 
 [fnm](https://github.com/Schniz/fnm) - 🚀 Fast and simple Node.js version manager, built in Rust
 
-## Productivity
+[fzf](https://github.com/junegunn/fzf) - 🌸 A command-line fuzzy finder
 
-[zoxide](https://github.com/ajeetdsouza/zoxide) - A smarter cd command. Supports all major shells.
+[neovim](https://github.com/neovim/neovim) - Vim-fork focused on extensibility and usability
 
-## Prompt
+[nerd-fonts](https://github.com/ryanoasis/nerd-fonts) - About
+Iconic font aggregator, collection, & patcher. 3,600+ icons, 50+ patched fonts: Hack, Source Code Pro, more. Glyph collections: Font Awesome, Material Design Icons, Octicons, & more
+
+[ranger](https://github.com/ranger/ranger) - A VIM-inspired filemanager for the console
+
+[plugin-git](https://github.com/jhillyerd/plugin-git) - Git plugin for Oh My Fish (similar to oh-my-zsh git)
 
 [starship](https://github.com/starship/starship) - ☄🌌️ The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 
-## Tmux
-
 [tmux](https://github.com/tmux/tmux) - tmux is a terminal multiplexer
-[Oh my tmux](https://github.com/gpakosz/.tmux) - 🇫🇷 Oh my tmux! My self-contained, pretty & versatile tmux configuration made with ❤️
+
+[zoxide](https://github.com/ajeetdsouza/zoxide) - A smarter cd command. Supports all major shells.
