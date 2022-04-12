@@ -22,7 +22,7 @@ specifiers:
   '@types/webpack-bundle-analyzer': ^4.4.1
   '@typescript-eslint/eslint-plugin': ^5.16.0
   '@typescript-eslint/parser': ^5.16.0
-  ahooks: ^3.1.14
+  ahooks: ^3.3.0
   antd: ^4.19.3
   axios: ^0.26.1
   babel-jest: ^27.5.1
@@ -70,7 +70,7 @@ dependencies:
   '@ant-design/icons': 4.7.0_react-dom@17.0.2+react@17.0.2
   '@emotion/react': 11.8.2_c1cf67fb40c16c390126f300fc197413
   '@reduxjs/toolkit': 1.8.0_react-redux@7.2.6+react@17.0.2
-  ahooks: 3.1.14_react@17.0.2
+  ahooks: 3.3.0_react@17.0.2
   antd: 4.19.3_react-dom@17.0.2+react@17.0.2
   axios: 0.26.1
   darkreader: 4.9.46
@@ -3162,11 +3162,11 @@ packages:
     resolution: {integrity: sha512-V7uUvAwnimu6eh/PED4mCDjE7tokeZQLKlxg9lCTMPhN+NjsSbtdacByVlR1oluXQzD3MOw55wylDmQo4+S9ZQ==}
     dev: false
 
-  /ahooks/3.1.14_react@17.0.2:
-    resolution: {integrity: sha512-Pk9BmfN+nUs7Zh5aniDY2J6K+JGQDBojjwURG2kd/w4+7FQV9qRAs0MQWM6s/FB8GlvdpNtiH++NDXSpxcBqvA==}
+  /ahooks/3.3.0_react@17.0.2:
+    resolution: {integrity: sha512-X1TIXvRNgWrx9Cfxa3QDnHttnphT1otSCNjELs1Yf88cPHt6Fp96MWHx83Zhkb3wcRbWzeQHQTISDTKq4itIbw==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
-      react: ^16.8.6 || ^17.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@types/js-cookie': 2.2.7
       ahooks-v3-count: 1.0.0

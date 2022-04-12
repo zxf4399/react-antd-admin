@@ -1,5 +1,6 @@
-import { useMemoizedFn, useMount, useSetState, useUpdateEffect } from "ahooks";
+import { useLocalStorageState, useMemoizedFn, useMount } from "ahooks";
 import { auto, disable, enable, isEnabled, Theme } from "darkreader";
+import { useEffect, useState } from "react";
 
 const theme: Partial<Theme> = {
   brightness: 100,
@@ -14,36 +15,29 @@ type State = {
 type UseDarkReader = () => [State, () => void];
 
 const useDarkReader: UseDarkReader = () => {
-  const [state, setState] = useSetState<State>({
-    isDark: false,
-    loading: true,
+  const [isDark, setIsDark] = useLocalStorageState("use-dark-reader", {
+    defaultValue: false,
   });
+
+  const [loading, setLoading] = useState(true);
 
   useMount(() => {
     auto(theme);
 
     if (isEnabled()) {
-      setState({
-        isDark: true,
-      });
+      setIsDark(true);
     }
 
-    setState({
-      loading: false,
-    });
+    setLoading(false);
   });
 
-  useUpdateEffect(() => {
-    state.isDark ? enable(theme) : disable();
-  }, [state.isDark]);
+  useEffect(() => {
+    isDark ? enable(theme) : disable();
+  }, [isDark]);
 
-  const toggle = useMemoizedFn(() =>
-    setState({
-      isDark: !state.isDark,
-    })
-  );
+  const toggle = useMemoizedFn(() => setIsDark((prevState) => !prevState));
 
-  return [state, toggle];
+  return [{ isDark, loading }, toggle];
 };
 
 export default useDarkReader;
