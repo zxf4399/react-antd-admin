@@ -113,6 +113,7 @@ const config: webpack.Configuration = {
     isProd && new MiniCssExtractPlugin(),
     isProd &&
       new WorkboxPlugin.GenerateSW({
+        cleanupOutdatedCaches: true,
         clientsClaim: true,
         skipWaiting: true,
       }),
