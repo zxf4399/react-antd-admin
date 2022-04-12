@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact_antd_admin=self.webpackChunkreact_antd_admin||[]).push([[9009],{9009:function(a,e,t){t.r(e),t.d(e,{default:function(){return c}});var n=t(6123),c=()=>(0,n.tZ)("div",{className:"src-pages-css-aspect-ratio-index-module__aspect-ratio--VRMns",children:(0,n.tZ)("div",{children:"我是内容"})})}}]);
-//# sourceMappingURL=9009.dcdaf8d5d975cdf03410.js.map

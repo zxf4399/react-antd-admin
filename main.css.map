@@ -1,1 +1,1 @@
-{"version":3,"file":"main.css","mappings":"AAAA,MACE,Y","sources":["webpack://react-antd-admin/./src/styles/base.css"],"sourcesContent":["#root {\n  height: 100%;\n}\n"],"names":[],"sourceRoot":""}
+{"version":3,"file":"main.css","mappings":"AAAA,MACE,Y","sources":["webpack://tech-stack/./src/styles/base.css"],"sourcesContent":["#root {\n  height: 100%;\n}\n"],"names":[],"sourceRoot":""}
