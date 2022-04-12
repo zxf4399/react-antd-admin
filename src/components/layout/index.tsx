@@ -1,22 +1,18 @@
-import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { css } from "@emotion/react";
-import { useMemoizedFn, useSetState } from "ahooks";
-import { Layout as AntdLayout, Menu } from "antd";
+import { useMemoizedFn } from "ahooks";
+import { Layout as AntdLayout, Menu, Row } from "antd";
 import { memo, useMemo } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 
 import routes, { getMenuList, MenuList } from "@/routes";
 
+import DarkReader from "../common/darkreader";
 import Breadcrumb from "./breadcrumb";
 
 const { Content, Header, Sider } = AntdLayout;
 
 const Layout = () => {
   const location = useLocation();
-
-  const [state, setState] = useSetState({
-    collapsed: false,
-  });
 
   const defaultOpenKeys = useMemo(
     () =>
@@ -28,9 +24,6 @@ const Layout = () => {
     []
   );
 
-  const toggleCollapsed = useMemoizedFn(() => {
-    setState((prevState) => ({ collapsed: !prevState.collapsed }));
-  });
   const renderMenuList = useMemoizedFn((menuList: MenuList) => {
     return menuList.map((menuItem) => {
       if (menuItem.children) {
@@ -55,13 +48,12 @@ const Layout = () => {
         height: 100%;
       `}
     >
-      <Sider collapsed={state.collapsed} collapsible trigger={null}>
+      <Sider collapsible theme="light" trigger={null}>
         <div
           css={css`
             height: 32px;
             line-height: 32px;
             margin: 16px 24px;
-            color: #fff;
           `}
         >
           技术栈
@@ -70,18 +62,26 @@ const Layout = () => {
           defaultOpenKeys={defaultOpenKeys}
           defaultSelectedKeys={[location.pathname]}
           mode="inline"
-          theme="dark"
         >
           {renderMenuList(getMenuList(routes))}
         </Menu>
       </Sider>
       <AntdLayout>
-        <Header>
-          {state.collapsed ? (
-            <MenuUnfoldOutlined onClick={toggleCollapsed} />
-          ) : (
-            <MenuFoldOutlined onClick={toggleCollapsed} />
-          )}
+        <Header
+          css={css`
+            background-color: #fff;
+            box-shadow: 0 8px 24px -2px rgb(0 0 0 / 5%);
+          `}
+        >
+          <Row
+            align="middle"
+            css={css`
+              height: 100%;
+            `}
+            justify="end"
+          >
+            <DarkReader />
+          </Row>
         </Header>
         <Content
           css={css`
