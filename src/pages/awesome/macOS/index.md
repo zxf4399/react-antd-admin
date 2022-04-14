@@ -14,6 +14,8 @@
 
 [httpie](https://github.com/httpie/httpie) - As easy as /aitch-tee-tee-pie/ 🥧 Modern, user-friendly command-line HTTP client for the API era. JSON support, colors, sessions, downloads, plugins & more.
 
+[iina](https://github.com/iina/iina) - The modern video player for macOS.
+
 [iTerm2](https://github.com/gnachman/iTerm2) - iTerm2 is a terminal emulator for Mac OS X that does amazing things.
 
 [raycast](https://www.raycast.com/) - Script Commands let you tailor Raycast to your needs. Think of them as little productivity boosts throughout your day.
