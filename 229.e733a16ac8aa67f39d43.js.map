@@ -1,0 +1,1 @@
+{"version":3,"file":"229.e733a16ac8aa67f39d43.js","mappings":"iLAMA,EAFc,KAAM,QAAC,IAAD,U","sources":["webpack://tech-stack/./src/pages/awesome/macOS/index.tsx"],"sourcesContent":["import ReactMarkdown from \"react-markdown\";\n\nimport md from \"./index.md\";\n\nconst MacOS = () => <ReactMarkdown>{md}</ReactMarkdown>;\n\nexport default MacOS;\n"],"names":[],"sourceRoot":""}
