@@ -20,6 +20,8 @@
 
 [raycast](https://www.raycast.com/) - Script Commands let you tailor Raycast to your needs. Think of them as little productivity boosts throughout your day.
 
+[Snipaste](https://www.snipaste.com/) - Free. Customizable. Portable.
+
 [uPic](https://github.com/gee1k/uPic) - 📤uPic is a native, powerful, beautiful and simple picture and file upload tool for macOS.
 
 [腾讯柠檬清理](https://lemon.qq.com/) - 畅快清理 · 全新体验
