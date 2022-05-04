@@ -11,20 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Cache pnpm modules
-        uses: actions/cache@v3
+      - uses: actions/setup-node@v3
         with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-
+          node-version: 16
+          cache: "npm"
 
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 6
-          run_install: true
-
-      - run: pnpm build
+      - run: npm i
+      - run: npm run build
 
       - uses: peaceiris/actions-gh-pages@v3
         with:
