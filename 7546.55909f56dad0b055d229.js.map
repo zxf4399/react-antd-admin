@@ -1,0 +1,1 @@
+{"version":3,"file":"7546.55909f56dad0b055d229.js","mappings":"mIAIA,UAJc,KACL","sources":["webpack://tech-stack/./src/pages/index/index.tsx"],"sourcesContent":["const Index = () => {\n  return <div>我是首页</div>;\n};\n\nexport default Index;\n"],"names":[],"sourceRoot":""}
