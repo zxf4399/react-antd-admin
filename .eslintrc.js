@@ -8,11 +8,14 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
     "prettier",
   ],
   rules: {
-    "@typescript-eslint/no-explicit-any": ["error", { ignoreRestArgs: false }],
-    "simple-import-sort/exports": "error",
-    "simple-import-sort/imports": "error",
+    "@typescript-eslint/no-explicit-any": [2, { ignoreRestArgs: false }],
+    "simple-import-sort/exports": 2,
+    "simple-import-sort/imports": 2,
+    "react/jsx-sort-props": 2,
   },
 };

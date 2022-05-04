@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import { useMemoizedFn } from "ahooks";
-import { Layout as AntdLayout, Menu, Row } from "antd";
+import { Layout as AntdLayout, Menu, MenuProps, Row } from "antd";
 import { memo, useMemo } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 
@@ -24,23 +24,24 @@ const Layout = () => {
     []
   );
 
-  const renderMenuList = useMemoizedFn((menuList: MenuList) => {
-    return menuList.map((menuItem) => {
-      if (menuItem.children) {
-        return (
-          <Menu.SubMenu key={menuItem.path} title={menuItem.name}>
-            {renderMenuList(menuItem.children)}
-          </Menu.SubMenu>
-        );
-      } else {
-        return (
-          <Menu.Item key={menuItem.path}>
-            <Link to={menuItem.path}>{menuItem.name}</Link>
-          </Menu.Item>
-        );
-      }
-    });
-  });
+  const renderMenuList = useMemoizedFn(
+    (menuList: MenuList): MenuProps["items"] => {
+      return menuList.map((menuItem) => {
+        if (menuItem.children) {
+          return {
+            label: <Link to={menuItem.path}>{menuItem.name}</Link>,
+            key: menuItem.path,
+            children: renderMenuList(menuItem.children),
+          };
+        } else {
+          return {
+            label: <Link to={menuItem.path}>{menuItem.name}</Link>,
+            key: menuItem.path,
+          };
+        }
+      });
+    }
+  );
 
   return (
     <AntdLayout
@@ -61,10 +62,9 @@ const Layout = () => {
         <Menu
           defaultOpenKeys={defaultOpenKeys}
           defaultSelectedKeys={[location.pathname]}
+          items={renderMenuList(getMenuList(routes))}
           mode="inline"
-        >
-          {renderMenuList(getMenuList(routes))}
-        </Menu>
+        />
       </Sider>
       <AntdLayout>
         <Header

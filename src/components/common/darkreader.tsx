@@ -10,15 +10,17 @@ const DarkReader = () => {
     toggle();
   });
 
+  if (loading) {
+    return null;
+  }
+
   return (
-    !loading && (
-      <Switch
-        checked={isDark}
-        checkedChildren="🌜"
-        onChange={onChange}
-        unCheckedChildren="🌞"
-      />
-    )
+    <Switch
+      checked={isDark}
+      checkedChildren="🌜"
+      onChange={onChange}
+      unCheckedChildren="🌞"
+    />
   );
 };
 
