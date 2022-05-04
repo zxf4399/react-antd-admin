@@ -1,7 +1,6 @@
 import "webpack-dev-server";
 
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
-import CopyPlugin from "copy-webpack-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
@@ -66,6 +65,7 @@ const config: webpack.Configuration = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      favicon: path.join(__dirname, "favicon.ico"),
       template: path.join(__dirname, "src", "index.html"),
     }),
     isDev && new ReactRefreshWebpackPlugin(),
@@ -78,14 +78,6 @@ const config: webpack.Configuration = {
       extensions: ["ts", "tsx"],
     }),
     isProd && new MiniCssExtractPlugin(),
-    isProd &&
-      new CopyPlugin({
-        patterns: [
-          {
-            from: "public",
-          },
-        ],
-      }),
   ].filter(Boolean) as webpack.Configuration["plugins"],
   performance: {
     maxAssetSize: 800000,

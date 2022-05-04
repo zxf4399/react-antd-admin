@@ -18,4 +18,9 @@ module.exports = {
     "simple-import-sort/imports": 2,
     "react/jsx-sort-props": 2,
   },
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
 };
