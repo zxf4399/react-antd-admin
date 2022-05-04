@@ -54,26 +54,6 @@ const config: webpack.Configuration = {
     historyApiFallback: true,
     hot: true,
   },
-  optimization: {
-    runtimeChunk: "single",
-    splitChunks: {
-      chunks: "all",
-      cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          enforce: true,
-          name(module: { context: string }) {
-            const packageName = module.context.match(
-              /[\\/]node_modules[\\/]\.pnpm[\\/](.*?)([\\/]|$)/
-            )?.[1];
-            const index = module.context.indexOf(packageName || "");
-
-            return `.pnpm/${module.context.slice(index)}`;
-          },
-        },
-      },
-    },
-  },
   output: {
     clean: true,
     path: path.join(__dirname, "dist"),
