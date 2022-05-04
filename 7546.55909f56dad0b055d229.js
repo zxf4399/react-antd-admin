@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunktech_stack=self.webpackChunktech_stack||[]).push([[7546],{7546:function(c,e,t){t.r(e);var s=t(5565);e.default=()=>(0,s.tZ)("div",{children:"我是首页"})}}]);
-//# sourceMappingURL=7546.55909f56dad0b055d229.js.map
