@@ -8,8 +8,6 @@ import path from "path";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
 import webpack from "webpack";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
-import WebpackPwaManifest from "webpack-pwa-manifest";
-import WorkboxPlugin from "workbox-webpack-plugin";
 
 import { isDev, isProd } from "./src/utils/const";
 
@@ -86,18 +84,6 @@ const config: webpack.Configuration = {
     plugins: [new TsconfigPathsPlugin()],
   },
   plugins: [
-    isProd &&
-      new WebpackPwaManifest({
-        description: "TECH-STACK",
-        icons: [
-          {
-            src: "https://raw.githubusercontent.com/zxf4399/oss/main/2022/04/11/tech-stack-icon-1024.png",
-            size: "1024 * 1024",
-          },
-        ],
-        name: "TECH-STACK",
-        publicPath: "/tech-stack",
-      }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
     }),
@@ -111,7 +97,6 @@ const config: webpack.Configuration = {
       extensions: ["ts", "tsx"],
     }),
     isProd && new MiniCssExtractPlugin(),
-    isProd && new WorkboxPlugin.GenerateSW({}),
   ].filter(Boolean) as webpack.Configuration["plugins"],
   performance: {
     maxAssetSize: 800000,
