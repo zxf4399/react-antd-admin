@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunktech_stack=self.webpackChunktech_stack||[]).push([[532],{4532:function(t,n,c){c.r(n),c.d(n,{default:function(){return s}});var e=c(3170),a=c(9940),s=()=>(0,a.tZ)(e.D,{children:"# npm\n\n[cz-cli](https://github.com/commitizen/cz-cli) - The commitizen command line utility.\n\n[sort-package-json](https://github.com/keithamus/sort-package-json) - Sort an Object or package.json based on the well-known package.json keys\n"})}}]);
-//# sourceMappingURL=532.e5268786381516ff3729.js.map
