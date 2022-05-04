@@ -20,8 +20,7 @@
     "test": "jest"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "eslint --cache --fix",
-    "*.{ts,tsx,md}": "prettier --write"
+    "*.{ts,tsx}": "eslint --cache --fix"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
