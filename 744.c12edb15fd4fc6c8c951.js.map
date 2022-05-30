@@ -1,0 +1,1 @@
+{"version":3,"file":"744.c12edb15fd4fc6c8c951.js","mappings":"kLAMA,EAFY,KAAM,QAAC,IAAD,U","sources":["webpack://tech-stack/./src/pages/awesome/npm/index.tsx"],"sourcesContent":["import ReactMarkdown from \"react-markdown\";\n\nimport md from \"./index.md\";\n\nconst Npm = () => <ReactMarkdown>{md}</ReactMarkdown>;\n\nexport default Npm;\n"],"names":[],"sourceRoot":""}
